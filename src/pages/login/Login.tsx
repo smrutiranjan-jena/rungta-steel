@@ -1,11 +1,14 @@
 import { useState, type FormEvent } from "react";
 import { Mail, Lock, Eye, EyeOff, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function RungtaSteelLogin() {
+    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
 
     function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        navigate("/admin/dashboard");
     }
 
     return (
